@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <title>GraphDrawing Visualizer</title>
+    <script src="jquery-3.2.1.min.js"></script>
+  </head>
+  <body dropzone="file:text/plain">
+    <h1><a href="https://community.topcoder.com/longcontest/?module=ViewProblemStatement&compid=55119&rd=16903" target="_blank">TCO17 MM Round1 GraphDrawing Visualizer</a></h1>
+    <div>Input File<input type="file" id="input_file"/></div>
+    <div style="width:720px; height:720px;" id="canv">
+      
+    </div>
+    <div style="background-clip: text; background: linear-gradient(to right, hsla(0, 90%, 50%, 0.6), hsla(60, 90%, 50%, 0.6), hsla(120, 90%, 50%, 0.6), hsla(180, 90%, 50%, 0.6), hsla(240, 90%, 50%, 0.6)); width:300px">
+      <p style="color:white; font-weight: bold"> Too short &lt;--- Edge length ---&gt; Too long </p>
+    </div>
+    <div style="display:table; text-align: right;">
+      <div style="display:table-row;">
+        <div style="display:table-cell">
+          Time : 
+        </div>
+        <div style="display:table-cell">
+          <input type="range" id="time_bar" value="0" max="0" style="width:100" />
+          <input type="number" id="time_bar_display" value="0" style="width:70"/>
+        </div>
+      </div>
+      <div style="display:table-row;">
+        <div style="display:table-cell">
+          Score : 
+        </div>
+        <div style="display:table-cell">
+          <input type="text" id="score" value="0" />
+        </div>
+      </div>
+      <div style="display:table-row;">
+        <div style="display:table-cell">
+          Min Ratio : 
+        </div>
+        <div style="display:table-cell">
+          <input type="text" id="min_ratio" value="0" />
+        </div>
+      </div>
+      <div style="display:table-row;">
+        <div style="display:table-cell">
+          Max Ratio : 
+        </div>
+        <div style="display:table-cell">
+          <input type="text" id="max_ratio" value="0" />
+        </div>
+      </div>
+      <div style="display:table-row;">
+        <div style="display:table-cell">
+          Edge : 
+        </div>
+        <div style="display:table-cell">
+          <input type="checkbox" id="show_edge" value="false" />
+        </div>
+      </div>
+      <div style="display:table-row;">
+        <div style="display:table-cell">
+          Run : 
+        </div>
+        <div style="display:table-cell">
+          <button  type="button" id="run">
+            RUN
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="./pixi.min.js"></script>
+    <script src="./visualizer.js"></script>
+    <div>
+      <h4>Input File Format</h4>
+<pre style="background-color:lightgrey">
+NV
+edges[0] edges[1] ... edges[3*NV-1]
+Frame_0
+Frame_1
+.
+.
+.
+Frame_T
+</pre>
+      <p>
+        NV : the number of vertices <br/>
+        edges : the given edge data (the i-th edge connects vertices edges[3*i] and edges[3*i+1] and has the desired length of edges[3*i+2])<br/>
+        Frame_i : the coordinates of the each vertex at Frame_i
+      </p>
+<pre style="background-color:lightgrey">
+x[0] y[0] x[1] y[1] ... x[NV-1] y[NV-1]
+</pre>
+    </div>
+    <div>
+      <p><a href="visualizer.cpp">visualizer.cpp</a></p>
+    </div>
+  </body>
+</html>
