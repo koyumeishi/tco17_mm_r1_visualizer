@@ -25,7 +25,7 @@ x[0] y[0] x[1] y[1] ... x[NV-1] y[NV-1]
 
 ---
 
-C++ の方は visualizer.cpp を include して、初めに初期化、
+C++ の方は [visualizer.cpp](https://github.com/koyumeishi/tco17_mm_r1_visualizer/blob/master/visualizer.cpp) を include して、初めに初期化、
 
 ```
 visualizer::init(NV, edges, filename);
